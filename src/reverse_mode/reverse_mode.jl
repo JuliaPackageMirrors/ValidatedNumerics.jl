@@ -26,7 +26,7 @@ end
 
 doc"""absRev(c, x) is the subset of x such that |x| is in c,
 i.e. c = |x| """
-function absRev(c, x=entireinterval())
+function absRev(c, x = entireinterval() )
     x1 = x ∩ c
     x2 = x ∩ (-c)
 
@@ -44,8 +44,12 @@ function pownRev(c, x, p)
     end
 end
 
+function pownRev(c, p) = pownRev(c, entireinterval(), p)
+
 doc"""sinRev(c, x) is the subset of x such that c = sin(x)"""
-function sinRev(c, x)
+function sinRev(c, x = entireinterval() )
+    x = x ∩ asin(c)
+    # must add sets inside x that are multiples of pi etc.
 end
 
 # Binary functions
